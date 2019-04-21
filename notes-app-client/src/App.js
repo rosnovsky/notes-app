@@ -9,7 +9,10 @@ import './App.css';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { isAuthenticated: false, isAuthenticating: true };
+    this.state = {
+      isAuthenticated: false,
+      isAuthenticating: true
+    };
   }
 
   async componentDidMount() {
@@ -61,9 +64,12 @@ class App extends Component {
               <Navbar.Collapse className="justify-content-end">
                 <Nav>
                   {this.state.isAuthenticated ? (
-                    <Nav.Item>
-                      <Nav.Link onClick={this.handleLogout}>Logout</Nav.Link>
-                    </Nav.Item>
+                    <>
+                      {/* <Nav.Item>{this.props.username}</Nav.Item> */}
+                      <Nav.Item>
+                        <Nav.Link onClick={this.handleLogout}>Logout</Nav.Link>
+                      </Nav.Item>
+                    </>
                   ) : (
                     <>
                       <Nav.Item>
