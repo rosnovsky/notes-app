@@ -18,7 +18,10 @@
     "serverless-offline": "^3.25.6",
     "serverless-webpack": "^5.2.0",
     "webpack": "^4.16.2",
-    "webpack-node-externals": "^1.6.0"
+    "webpack-node-externals": "^1.6.0",
+    "merge": ">=1.2.1",
+    "extend": ">=3.0.2",
+    "cryptiles": ">=4.1.2"
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",
