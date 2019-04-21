@@ -11,12 +11,8 @@ export async function main(event, context) {
   };
 
   try {
-    const result = await dynamoDbLib.call('get', params);
-    if (result.Item) {
-      return success(result.Item);
-    } else {
-      return fail({ status: false, error: 'Note not found' });
-    }
+    await dynamoDbLib.call('delete', params);
+    return success({ status: true });
   } catch (e) {
     return fail({ status: false });
   }
