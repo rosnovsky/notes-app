@@ -1,5 +1,4 @@
 import uuid from 'uuid';
-import AWS from 'aws-sdk';
 import * as dynamoDBLib from './libs/dynamodb-libs';
 import { success, fail } from './libs/response-lib';
 
