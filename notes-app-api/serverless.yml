@@ -72,29 +72,3 @@ functions:
 
 resources:
   - ${file(resources/api-gateway-errors.yml)}
-
-npx aws-api-gateway-cli-test \
---username="inbox@podtema.com" \
---password="Passw0rd!" \
---user-pool-id="" \
---app-client-id="" \
---cognito-region="us-east-1" \
---identity-pool-id="" \
---invoke-url="" \
---api-gateway-region="us-east-1" \
---path-template="/notes" \
---method="POST" \
---body="{'content':'New note','attachment':'note'}"
-
-npx aws-api-gateway-cli-test \
---username='inbox@podtema.com' \
---password='Passw0rd!' \
---user-pool-id='us-east-1:1dd4e99e-3af5-4a71-9dde-6360f8f63cf9' \
---app-client-id='11hccat78verr0b3hq5ul3cbl' \
---cognito-region='us-east-1' \
---identity-pool-id='us-east-1_vOCOQyPjB' \
---invoke-url='https://w1ci6cx9tj.execute-api.us-east-1.amazonaws.com/prod/notes' \
---api-gateway-region='us-east-1' \
---path-template='/notes' \
---method='POST' \
---body='{"content":"New Note","attachment":"note.jpg"}'
