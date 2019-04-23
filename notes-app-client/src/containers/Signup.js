@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import LoaderButton from '../components/LoaderButton';
 import { Auth } from 'aws-amplify';
 import './Signup.css';
