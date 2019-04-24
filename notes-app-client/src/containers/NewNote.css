@@ -1,8 +1,14 @@
-.NewNote form {
-  padding-bottom: 15px;
-}
+@media all and (min-width: 480px) {
+  .NewNote {
+    display: flex;
+    padding: 60px 0;
+    width: 100%;
+    justify-content: center;
+  }
 
-.NewNote form textarea {
-  height: 300px;
-  font-size: 24px;
+  .NewNote textarea {
+    justify-self: center;
+    height: 300px;
+    font-size: 24px;
+  }
 }

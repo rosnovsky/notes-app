@@ -19,7 +19,7 @@ class App extends Component {
     try {
       await Auth.currentSession();
       this.userHasAuthenticated(true);
-      this.props.history.push('/');
+      // this.props.history.push('/');
     } catch (e) {
       if (e !== 'No current user') {
         alert(e);
@@ -33,7 +33,7 @@ class App extends Component {
     this.setState({
       isAuthenticated: true
     });
-    this.props.history.push('/');
+    // this.props.history.push('/');
   };
 
   handleLogout = async event => {
