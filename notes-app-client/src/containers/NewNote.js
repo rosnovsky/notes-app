@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Form } from 'react-bootstrap';
 import { API } from 'aws-amplify';
 
+import s3Upload from '../libs/AWSLib';
 import LoaderButton from '../components/LoaderButton';
 import config from '../config';
 import './NewNote.css';
@@ -46,7 +47,10 @@ export default class NewNote extends Component {
     });
 
     try {
+      const attachment = this.file ? await s3Upload(this.file) : null;
+
       await this.createNote({
+        attachment,
         content: this.state.content
       });
       this.props.history.push('/');
