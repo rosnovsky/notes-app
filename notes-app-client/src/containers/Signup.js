@@ -67,6 +67,23 @@ export default class Signup extends Component {
     }
   };
 
+  renderTooltip(props) {
+    return (
+      <div
+        {...props}
+        style={{
+          backgroundColor: 'rgba(0, 0, 0, 0.75)',
+          padding: '2px 10px',
+          color: 'white',
+          borderRadius: 3,
+          ...props.style
+        }}
+      >
+        Simple tooltip
+      </div>
+    );
+  }
+
   renderConfirmationForm() {
     return (
       <form onSubmit={this.handleConfirmationSubmit}>
@@ -109,58 +126,53 @@ export default class Signup extends Component {
         </Form.Group>
         <Form.Group controlId="password" bsSize="large">
           <Form.Label>Password</Form.Label>
-          <Form.Control
-            value={this.state.password}
-            onChange={this.handleChange}
-            type="password"
-          />
+          <OverlayTrigger
+            key="bottom"
+            placement="bottom"
+            overlay={
+              <Tooltip id={`tooltip-bottom`}>
+                <p>
+                  Choose secure password. Use at least one capital and lower
+                  case letter, and make it 8+ characters long.
+                </p>
+              </Tooltip>
+            }
+          >
+            <Form.Control
+              value={this.state.password}
+              onChange={this.handleChange}
+              type="password"
+            />
+          </OverlayTrigger>
         </Form.Group>
         <Form.Group controlId="confirmPassword" bsSize="large">
           <Form.Label>Confirm Password</Form.Label>
-          <Form.Control
-            value={this.state.confirmPassword}
-            onChange={this.handleChange}
-            type="password"
-          />
+          <OverlayTrigger
+            key="bottom"
+            placement="bottom"
+            overlay={
+              <Tooltip id={`tooltip-bottom`}>
+                <p>Please type the same password again. Just to confirm.</p>
+              </Tooltip>
+            }
+          >
+            <Form.Control
+              value={this.state.confirmPassword}
+              onChange={this.handleChange}
+              type="password"
+            />
+          </OverlayTrigger>
         </Form.Group>
-        {!this.validateForm() ? (
-          <>
-            <OverlayTrigger
-              key="bottom"
-              placement="bottom"
-              overlay={
-                <Tooltip id={`tooltip-bottom`}>
-                  <p>
-                    Password must be at least 8 characters long, with a mix of
-                    capital and lower case letter (and, ideally, a number)
-                  </p>
-                </Tooltip>
-              }
-            >
-              <LoaderButton
-                block
-                size="lg"
-                variant="outline-dark"
-                disabled={!this.validateForm()}
-                type="submit"
-                isLoading={this.state.isLoading}
-                text="Signup"
-                loadingText="&nbsp;Signing in…"
-              />
-            </OverlayTrigger>
-          </>
-        ) : (
-          <LoaderButton
-            block
-            size="lg"
-            variant="outline-dark"
-            disabled={!this.validateForm()}
-            type="submit"
-            isLoading={this.state.isLoading}
-            text="Signup"
-            loadingText="Signing up…"
-          />
-        )}
+        <LoaderButton
+          block
+          size="lg"
+          variant="outline-dark"
+          disabled={!this.validateForm()}
+          type="submit"
+          isLoading={this.state.isLoading}
+          text="Sign up"
+          loadingText="&nbsp;Signing up…"
+        />
       </form>
     );
   }
