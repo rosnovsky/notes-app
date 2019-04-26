@@ -86,7 +86,7 @@ export default class Login extends Component {
                   disabled={!this.validateForm()}
                   type="submit"
                   isLoading={this.state.isLoading}
-                  text="Login!"
+                  text="Login"
                   loadingText="Logging in…"
                 />
               </OverlayTrigger>
@@ -99,7 +99,7 @@ export default class Login extends Component {
               disabled={!this.validateForm()}
               type="submit"
               isLoading={this.state.isLoading}
-              text="Login"
+              text="Login!"
               loadingText="&nbsp;Logging in…"
             />
           )}

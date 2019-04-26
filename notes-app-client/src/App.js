@@ -65,7 +65,11 @@ class App extends Component {
                 <Nav>
                   {this.state.isAuthenticated ? (
                     <>
-                      {/* <Nav.Item>{this.props.username}</Nav.Item> */}
+                      <Nav.Item>
+                        <Nav.Link>
+                          <Link to="/notes/new">New Note</Link>
+                        </Nav.Link>
+                      </Nav.Item>
                       <Nav.Item>
                         <Nav.Link onClick={this.handleLogout}>Logout</Nav.Link>
                       </Nav.Item>

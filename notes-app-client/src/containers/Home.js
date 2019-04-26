@@ -36,7 +36,7 @@ export default class Home extends Component {
   renderLander() {
     return (
       <div className="lander">
-        <h1>Scratch</h1>
+        <h1>Noted</h1>
         <p>A simple note taking app</p>
       </div>
     );
@@ -66,7 +66,7 @@ export default class Home extends Component {
     return (
       <div className="notes">
         <h1>Your Notes</h1>
-        <ListGroup>
+        <ListGroup className="Note">
           {!this.state.isLoading && this.renderNotesList(this.state.notes)}
         </ListGroup>
       </div>

@@ -1,11 +1,15 @@
-@media all and (min-width: 480px) {
+@media all and (min-width: 640px) {
   .NewNote {
+    width: 100%;
+    margin: 0.5rem;
     display: flex;
     padding: 60px 0;
-    width: 100%;
     justify-content: center;
   }
 
+  .NewNote form {
+    width: 40rem;
+  }
   .NewNote textarea {
     justify-self: center;
     height: 300px;

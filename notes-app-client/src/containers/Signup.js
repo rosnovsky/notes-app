@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form } from 'react-bootstrap';
+import { Form, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import LoaderButton from '../components/LoaderButton';
 import { Auth } from 'aws-amplify';
 import './Signup.css';
@@ -74,6 +74,7 @@ export default class Signup extends Component {
           <Form.Label>Confirmation Code</Form.Label>
           <Form.Control
             autofocus
+            placeholder="Code has been emailed to you"
             type="tel"
             value={this.state.confirmationCode}
             onChange={this.handleChange}
@@ -122,16 +123,44 @@ export default class Signup extends Component {
             type="password"
           />
         </Form.Group>
-        <LoaderButton
-          block
-          size="lg"
-          variant="outline-dark"
-          disabled={!this.validateForm()}
-          type="submit"
-          isLoading={this.state.isLoading}
-          text="Signup"
-          loadingText="&nbsp; Signing up…"
-        />
+        {!this.validateForm() ? (
+          <>
+            <OverlayTrigger
+              key="bottom"
+              placement="bottom"
+              overlay={
+                <Tooltip id={`tooltip-bottom`}>
+                  <p>
+                    Password must be at least 8 characters long, with a mix of
+                    capital and lower case letter (and, ideally, a number)
+                  </p>
+                </Tooltip>
+              }
+            >
+              <LoaderButton
+                block
+                size="lg"
+                variant="outline-dark"
+                disabled={!this.validateForm()}
+                type="submit"
+                isLoading={this.state.isLoading}
+                text="Signup"
+                loadingText="&nbsp;Signing in…"
+              />
+            </OverlayTrigger>
+          </>
+        ) : (
+          <LoaderButton
+            block
+            size="lg"
+            variant="outline-dark"
+            disabled={!this.validateForm()}
+            type="submit"
+            isLoading={this.state.isLoading}
+            text="Signup"
+            loadingText="Signing up…"
+          />
+        )}
       </form>
     );
   }
