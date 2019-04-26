@@ -56,10 +56,11 @@ functions:
     handler: update.main
     events: 
       - http:
-          path: notes
+          path: notes/{id}
           method: put
           cors: true
-          authorizer: aws_iam
+          authorizer: 
+            type: aws_iam
   delete:
     handler: delete.main
     events:
