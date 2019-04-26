@@ -43,7 +43,7 @@ class App extends Component {
           isAuthenticated: false
         })
       )
-      .then(this.props.history.push('/login'));
+      .then(this.props.history.push('/'));
   };
 
   render() {
