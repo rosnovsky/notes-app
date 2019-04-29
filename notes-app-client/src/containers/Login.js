@@ -44,6 +44,7 @@ export default class Login extends Component {
   };
 
   render() {
+    // If user is unconfirmed, redirect them to purgatory
     return (
       <div className="Login">
         <form onSubmit={this.handleSubmit}>

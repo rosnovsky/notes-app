@@ -133,6 +133,7 @@ export default class Note extends Component {
           <Form onSubmit={this.handleSubmit}>
             <Form.Group controlId="content">
               <Form.Control
+                focus
                 as="textarea"
                 onChange={this.handleChange}
                 value={this.state.content}

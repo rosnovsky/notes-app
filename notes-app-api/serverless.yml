@@ -5,6 +5,13 @@ plugins:
   - serverless-offline
 
 custom:
+  stage: ${opt:stage, self:provider.stage}
+  tableName: ${self:custom.stage}-notes
+  tableThroughputs: 
+    prod: 5
+    default: 1
+  tableTrhroughput: ${self:custom.tableThroughputs.${self:custom.stage}, self:custom.tableThroughputs.default}
+
   webpack:
     webpackConfig: ./webpack.config.js
     includeModules: true
@@ -12,7 +19,7 @@ custom:
 provider:
   name: aws
   runtime: nodejs8.10
-  stage: prod
+  stage: dev
   region: us-east-1
 
   iamRoleStatements:
@@ -72,4 +79,7 @@ functions:
     
 
 resources:
+  # API Gateway Errors
   - ${file(resources/api-gateway-errors.yml)}
+  # DynamoDB
+  - ${file(resources/dynamodb-table.yml)}
