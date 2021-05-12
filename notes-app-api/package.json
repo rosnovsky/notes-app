@@ -19,7 +19,7 @@
     "serverless-webpack": "^5.2.0",
     "webpack": "^4.16.2",
     "webpack-node-externals": "^1.6.0",
-    "merge": ">=1.2.1",
+    "merge": ">=2.1.1",
     "extend": ">=3.0.2",
     "cryptiles": ">=4.1.2"
   },
