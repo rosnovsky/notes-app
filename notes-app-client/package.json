@@ -5,7 +5,7 @@
   "dependencies": {
     "aws-amplify": "^1.1.26",
     "bootstrap": "^4.3.1",
-    "netlify-cli": "^2.11.11",
+    "netlify-cli": "2.71.0",
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.8",
     "react-dom": "^16.8.6",
