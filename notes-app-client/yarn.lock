@@ -8693,9 +8693,7 @@ netlify-cli-logo@^1.0.0:
     chalk "^2.4.2"
 
 netlify-cli@^2.11.11:
-  version "2.11.11"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.11.11.tgz#66dab4b3031780757af00b4498e54c77bc60d061"
-  integrity sha512-hV8PvY79mznAHre546ui+A50H59p0Aol4hJlKWUfROrGI3s01rmPX3I3dlzB0o25f/6TbfV2rlkY6Hwq9GuNJw==
+  version "2.71.0"
   dependencies:
     "@netlify/cli-utils" "^1.0.2"
     "@oclif/command" "^1.5.13"
